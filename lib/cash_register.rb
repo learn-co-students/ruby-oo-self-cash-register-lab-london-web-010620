@@ -11,7 +11,7 @@ class CashRegister
 
     def add_item(title, price, quantity = 1)
         # binding.pry
-        @total += price*quantity
+        @total += price * quantity
         @void = price * quantity
         quantity.times do
             @cart << title
@@ -32,7 +32,6 @@ class CashRegister
     end
 
     def void_last_transaction
-        self.total -= @cart
-#        @total -= @void
+        @total -= void
     end
 end
