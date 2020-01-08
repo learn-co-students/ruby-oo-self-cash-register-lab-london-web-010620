@@ -5,12 +5,12 @@ class CashRegister
     def initialize(discount = 0)
        @total = 0 
        @discount = discount
-       @items = []
+       @cart = []
     end
 
     def add_item(title, price, quantity = 1)
         @total += price*quantity
-        @items.fill(title, quantity)
+        @cart.fill(title, @cart.length, quantity)
         @void = price * quantity
     end
 
@@ -24,7 +24,7 @@ class CashRegister
     end
 
     def items
-        @items
+        @cart
     end
 
     def void_last_transaction
