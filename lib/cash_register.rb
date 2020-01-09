@@ -12,7 +12,7 @@ class CashRegister
     def add_item(title, price, quantity = 1)
         # binding.pry
         @total += price * quantity
-        # @void = price * quantity
+        @void = price * quantity
         quantity.times do
             @cart << title
         end
