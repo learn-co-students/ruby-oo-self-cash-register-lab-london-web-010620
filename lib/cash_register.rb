@@ -12,7 +12,7 @@ class CashRegister
         @total += price * quantity
         quantity.times do 
             @cart << title
-        self.last_transaction = [title, price, quantity]
+        @last_transaction = [title, price, quantity]
 
         end
     end
@@ -31,9 +31,7 @@ class CashRegister
     end
 
     def void_last_transaction
-        self.total -= self.last_transaction[1] * self.last_transaction[2]
-        self.last_transaction[2].times do
-        self.items.delete_at(self.items.index(self.last_transaction[0]) || self.items.count)
-        end
+        @total -= last_transaction[1] * last_transaction[2]
+        # total equal with the price * quantity 
     end
 end
